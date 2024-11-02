@@ -1,0 +1,55 @@
+# 빌드 산출물과 로그 파일
+study-developer/build/
+study-developer/logs/
+logs/
+*.env
+study-developer/src/main/resources/wallet/*
+!study-developer/src/main/resources/wallet/
+
+
+# Gradle 설정과 캐시 파일
+study-developer/.gradle/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA 설정 파일 (전체 제외)
+study-developer/.idea/
+.idea/
+
+# 특정 IntelliJ 설정 파일 포함 (필요한 경우만 포함)
+/.idea/codeStyles/
+!.idea/codeStyles/Project.xml
+
+# IntelliJ IDEA 라이브러리 설정 파일
+# 필요한 경우 이 줄의 주석을 해제하여 `.idea/libraries/` 폴더를 Git에 포함시킬 수 있습니다.
+# .idea/libraries/
+
+# 공통 출력 디렉토리
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse 설정 파일
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# NetBeans 설정 파일
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code 설정 파일
+.vscode/
+
+# macOS 시스템 파일
+.DS_Store
