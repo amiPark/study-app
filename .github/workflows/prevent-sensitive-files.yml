@@ -1,4 +1,4 @@
-name: Prevent Sensitive Files in Commits
+name: Prevent Sensitive Files in Commits!
 
 on:
   pull_request:
