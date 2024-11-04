@@ -1,0 +1,23 @@
+name: Prevent Sensitive Files in Commits
+
+on:
+  pull_request:
+    paths:
+      - '**'
+
+jobs:
+  check-forbidden-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Check for forbidden files
+        run: |
+          FORBIDDEN_PATHS=("study-app/study-developer/src/main/resources/wallet" "study-app/DBconnectionSet.env")
+          for path in "${FORBIDDEN_PATHS[@]}"; do
+            if git diff --name-only HEAD^ HEAD | grep -q "$path"; then
+              echo "Error: $path is not allowed in the commit."
+              exit 1
+            fi
+          done
