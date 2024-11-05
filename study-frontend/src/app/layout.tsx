@@ -7,7 +7,7 @@ import "./globals.css"; // 이 경로가 정확한지 확인
 import "./css/style.css"; // 이 경로가 정확한지 확인
 
 // UI 컴포넌트
-import Header from "@/components/ui/header"; // @ 경로가 올바르게 설정되었는지 확인
+import Header from "@/src/components/ui/header"; // @ 경로가 올바르게 설정되었는지 확인
 
 // 폰트 설정
 const geistSans = localFont({
@@ -28,7 +28,7 @@ const inter = Inter({
 const nacelle = localFont({
   src: [
     {
-      path: "fonts/nacelle-regular.woff2", // 올바른 절대 경로
+      path: "fonts/nacelle-regular.woff2", // 상대경로로 해야 인식한다
       weight: "400",
       style: "normal",
     },

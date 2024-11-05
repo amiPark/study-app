@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import forms from "@tailwindcss/forms";
 
 // Tailwind CSS 구성 파일
 const config: Config = {
@@ -56,7 +57,7 @@ const config: Config = {
     },
   },
   // Tailwind CSS 플러그인 설정
-  plugins: [require("@tailwindcss/forms")],  // @tailwindcss/forms 플러그인 추가 - 폼 스타일링 지원
+  plugins: [forms],  // @tailwindcss/forms 플러그인 추가 - 폼 스타일링 지원
 };
 
 export default config;
