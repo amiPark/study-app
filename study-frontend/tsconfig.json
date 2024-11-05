@@ -1,27 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "target": "ES2017", // 최신 ES2017을 사용하여 성능과 기능을 강화
+    "lib": ["dom", "dom.iterable", "esnext"], // DOM 관련 라이브러리와 최신 ESNext API 사용
+    "allowJs": true, // TypeScript 프로젝트 내에서 JavaScript 파일 허용
+    "skipLibCheck": true, // 타입 정의 파일의 타입 검사 건너뜀 (빌드 속도 향상)
+    "strict": true, // 모든 엄격한 타입 검사 옵션을 활성화하여 코드의 타입 안전성 보장
+    "noEmit": true, // 컴파일 시 실제 파일을 생성하지 않음 (에러 검사용으로만 사용)
+    "esModuleInterop": true, // CommonJS와 ES 모듈 간의 호환성을 지원하여 import 구문을 쉽게 사용
+    "module": "esnext", // 최신 모듈 시스템을 사용하여 다양한 모듈 활용
+    "moduleResolution": "bundler", // 번들러 방식으로 모듈을 해석하여 다양한 파일 확장자를 처리
+    "resolveJsonModule": true, // JSON 파일을 import할 수 있게 허용
+    "isolatedModules": true, // 각 파일을 독립적인 모듈로 취급하여 빠른 빌드와 오류 방지
+    "jsx": "preserve", // JSX를 변환하지 않고 유지하여 나중에 Babel이 처리할 수 있게 함
+    "incremental": true, // 증분 컴파일을 사용하여 컴파일 속도를 향상
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // Next.js에서 사용할 TypeScript 플러그인 설정
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // 절대 경로를 지원하여 src 폴더 기준으로 편리한 import 경로 설정
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"], // 컴파일 포함 파일/폴더 목록
+  "exclude": ["node_modules"] // 컴파일에서 제외할 파일/폴더 목록
 }
