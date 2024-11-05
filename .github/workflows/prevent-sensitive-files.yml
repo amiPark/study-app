@@ -24,3 +24,4 @@ jobs:
           
             echo "Error: Sensitive files or folders are being pushed."
             exit 1
+          fi
