@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import useMasonry from "@/utils/useMasonry";
+import useMasonry from "@/src/utils/useMasonry";
 import Image, { StaticImageData } from "next/image";
 import TestimonialImg01 from "@/public/images/testimonial-01.jpg";
 import TestimonialImg02 from "@/public/images/testimonial-02.jpg";
