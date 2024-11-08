@@ -3,12 +3,12 @@ export const metadata = {
   description: "Page description",
 };
 
-import PageIllustration from "@/components/page-illustration";
-import Hero from "@/components/hero-home";
-import Workflows from "@/components/workflows";
-import Features from "@/components/features";
-import Testimonials from "@/components/testimonials";
-import Cta from "@/components/cta";
+import PageIllustration from "@/src/components/page-illustration";
+import Hero from "@/src/components/hero-home";
+import Workflows from "@/src/components/workflows";
+import Features from "@/src/components/features";
+import Testimonials from "@/src/components/testimonials";
+import Cta from "@/src/components/cta";
 
 export default function Home() {
   return (
