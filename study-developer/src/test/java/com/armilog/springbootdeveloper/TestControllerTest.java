@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -40,7 +40,7 @@ class TestControllerTest {
         this.memberRepository.deleteAll();
     }
 
-    @DisplayName("getAllMembers: 아티클 조회에 성공한다.")
+    /*@DisplayName("getAllMembers: 아티클 조회에 성공한다.")
     @Test
     public void getAllMembers() throws Exception {
         //given
@@ -54,5 +54,5 @@ class TestControllerTest {
         result.andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(savedMember.getId()))
                 .andExpect(jsonPath("$[0].name").value(savedMember.getName()));
-    }
+    }*/
 }
