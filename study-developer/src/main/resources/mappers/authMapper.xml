@@ -1,0 +1,6 @@
+<mapper namespace="com.armilog.springbootdeveloper.mapper.authMapperDao">
+    <insert id="insertUser" parameterType="map">
+        INSERT INTO users (name, company, email, password)
+        VALUES (#{name}, #{company}, #{email}, #{password})
+    </insert>
+</mapper>
