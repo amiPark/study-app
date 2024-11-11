@@ -17,15 +17,13 @@ public class SpringBootDeveloperApplication {
             System.out.println("현재 실행 경로: " + currentPath);
             
             // VSCode에서 실행될 때의 경로 처리
-            // File.separator를 사용하여 OS에 맞는 경로 구분자 사용
-            if (currentPath.endsWith("study-developer") || 
-                currentPath.endsWith(File.separator + "study-developer")) {
+            if (currentPath.endsWith("/study-developer")) {
                 String parentPath = new File(currentPath).getParent();
                 dotenv = Dotenv.configure()
-                    .directory(parentPath)
+                    .directory(parentPath)  // study-app 디렉토리
                     .filename("DBconnectionSet.env")
                     .load();
-            }  
+            }
             // IntelliJ나 다른 환경에서 실행될 때의 경로 처리
             else {
                 dotenv = Dotenv.configure()
@@ -58,7 +56,7 @@ public class SpringBootDeveloperApplication {
         System.setProperty("DB_URL", dbUrl);
         System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));
         System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
-        
+
         SpringApplication.run(SpringBootDeveloperApplication.class, args);
     }
 }
