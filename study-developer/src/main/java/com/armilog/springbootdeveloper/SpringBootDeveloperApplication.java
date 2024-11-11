@@ -10,6 +10,10 @@ import java.io.File;
 @MapperScan("com.armilog.springbootdeveloper.mapper")
 public class SpringBootDeveloperApplication {
     public static void main(String[] args) {
+        // OS 확인
+        boolean isWindows = System.getProperty("os.name").toLowerCase().contains("windows");
+        String pathSeparator = isWindows ? "\\" : "/";
+        
         // 먼저 현재 디렉토리에서 시도
         Dotenv dotenv = null;
         try {
@@ -17,7 +21,7 @@ public class SpringBootDeveloperApplication {
             System.out.println("현재 실행 경로: " + currentPath);
             
             // VSCode에서 실행될 때의 경로 처리
-            if (currentPath.endsWith("/study-developer")) {
+            if (currentPath.endsWith(pathSeparator + "study-developer")) {
                 String parentPath = new File(currentPath).getParent();
                 dotenv = Dotenv.configure()
                     .directory(parentPath)  // study-app 디렉토리
@@ -38,9 +42,9 @@ public class SpringBootDeveloperApplication {
 
         String projectRoot = System.getProperty("user.dir");
         // VSCode 실행 시 경로 조정
-        String walletPath = projectRoot.endsWith("/study-developer") 
-            ? projectRoot + "/src/main/resources/wallet"
-            : projectRoot + "/study-developer/src/main/resources/wallet";
+        String walletPath = projectRoot.endsWith(pathSeparator + "study-developer") 
+            ? projectRoot + pathSeparator + "src" + pathSeparator + "main" + pathSeparator + "resources" + pathSeparator + "wallet"
+            : projectRoot + pathSeparator + "study-developer" + pathSeparator + "src" + pathSeparator + "main" + pathSeparator + "resources" + pathSeparator + "wallet";
         
         // Wallet 경로 설정
         System.setProperty("oracle.net.tns_admin", walletPath);
