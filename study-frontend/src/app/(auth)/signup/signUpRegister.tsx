@@ -18,12 +18,27 @@ export default function SignUpRegister({ data }: SignUpRegisterProps) {
     useEffect(() => {
         console.log("Received data:", data);
             //비동기 호출로 유저 정보 저장
-            async function registerUserInfo() {
-                const response = await fetch("/api/registerUserInfo", {
-                    method: "POST",
-                    body: JSON.stringify(data),
-                });
+        async function registerUserInfo() {
+            const response = await fetch("/api/registerUserInfo", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log("User registered successfully:", result);
+            } else {
+                console.error("Failed to register user:", response.statusText);
             }
+        }
+
+        // `data`가 존재할 경우에만 `registerUserInfo` 호출
+        if (data) {
+            registerUserInfo();
+        }
     }, [data]);
 
     // 회원가입 완료 메시지 렌더링

@@ -4,6 +4,7 @@ import com.armilog.springbootdeveloper.service.authService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -13,8 +14,13 @@ public class authController {
     @Autowired
     private authService authService;
 
+    /**
+     * 신규 사용자 회원가입 처리
+     * @param param 사용자 등록 정보를 담은 Map (이름, 이메일, 비밀번호 등)
+     * @return ResponseEntity<String> 회원가입 처리 결과 메시지
+     */
     @PostMapping("/registerUserInfo")
-    public ResponseEntity<String> signUp(Map<String, Object> param) {
+    public ResponseEntity<String> registerNewUser(@RequestBody Map<String, Object> param) {
         try {
             boolean isinsertUser = authService.insertUser(param);
             if (isinsertUser) {
