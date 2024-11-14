@@ -25,6 +25,11 @@ export default function SignUp() {
       email: (document.getElementById("email")! as HTMLInputElement).value,
       password: (document.getElementById("password")! as HTMLInputElement).value,
     };
+    // 데이터 유효성 검사
+    if (!data.name || !data.company || !data.email || !data.password) {
+      alert("회원가입 정보가 없습니다.");
+      return;
+    }
     setFormData(data);
   };
 
