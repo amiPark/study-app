@@ -20,6 +20,7 @@ public class securityConfig {
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/registerUserInfo").permitAll()
+                .requestMatchers("/common/**").permitAll()
                 .anyRequest().authenticated()
             )
             .cors(cors -> cors.configure(http));
