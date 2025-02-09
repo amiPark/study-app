@@ -9,7 +9,7 @@ const ApiTestPage = () => {
 
     useEffect(() => {
         // Next.js의 App Router에서 Spring Boot API 호출
-        fetch('/api/hello')
+        fetch('/api/common/hello')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
